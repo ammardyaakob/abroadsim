@@ -14,11 +14,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Smoothly decelerate to zero when no keys are pressed
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-		
-		# Your custom animation stopping logic
-		if $AnimatedSprite2D.frame == 0:
-			$AnimatedSprite2D.stop()
+
 
 	# 3. Move the character
 	move_and_slide()

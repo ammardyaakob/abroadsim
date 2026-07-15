@@ -3,6 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://dru70r8wn5ovh" path="res://Player.tscn" id="1_7sn5g"]
 [ext_resource type="Texture2D" uid="uid://vhbbltumjq87" path="res://Krita/Bedroom1.png" id="2_gf3we"]
 [ext_resource type="Texture2D" uid="uid://c6wygrg21qld3" path="res://kendall-smith-skyline.jpg" id="3_dewo4"]
+[ext_resource type="Script" uid="uid://cxa3iclfryei4" path="res://bed.gd" id="4_gf3we"]
+[ext_resource type="Script" uid="uid://bqo3iinxfyxs6" path="res://Outside.gd" id="5_6m4pu"]
+[ext_resource type="Script" uid="uid://dot4xlfqtw3ub" path="res://desk.gd" id="5_vowwe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyaky"]
+size = Vector2(207.75, 109)
 
 [node name="Node2D" type="Node2D" unique_id=463023459]
 
@@ -10,21 +16,12 @@
 
 [node name="TextureRect" type="TextureRect" parent="Room" unique_id=26932549]
 texture_filter = 1
-offset_left = -504.0
-offset_top = -256.0
-offset_right = 1760.0
-offset_bottom = 912.0
+offset_left = -12.0
+offset_top = -4.0
+offset_right = 1311.0
+offset_bottom = 648.0
 texture = ExtResource("2_gf3we")
-
-[node name="CharacterBody2D" parent="." unique_id=2091237456 instance=ExtResource("1_7sn5g")]
-visible = false
-z_index = 2
-position = Vector2(39.99994, 416.00003)
-scale = Vector2(0.60198283, 0.5950315)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=404441982]
-zoom = Vector2(0.585, 0.585)
-limit_enabled = false
+stretch_mode = 4
 
 [node name="outside" type="Parallax2D" parent="." unique_id=458676280]
 scale = Vector2(1.0217749, 0.94794)
@@ -32,9 +29,48 @@ scroll_scale = Vector2(0.3, 0.3)
 
 [node name="TextureRect" type="TextureRect" parent="outside" unique_id=1135864540]
 z_index = -1
-offset_left = -70.46564
-offset_top = -143.469
-offset_right = 1537.0828
-offset_bottom = 861.43085
+offset_left = -7.829513
+offset_top = -3.1647577
+offset_right = 1272.1705
+offset_bottom = 716.83527
 scale = Vector2(0.90103656, 0.948997)
 texture = ExtResource("3_dewo4")
+stretch_mode = 4
+
+[node name="CharacterBody2D" parent="." unique_id=2091237456 instance=ExtResource("1_7sn5g")]
+visible = false
+z_index = 2
+position = Vector2(575, 328.00003)
+scale = Vector2(0.60198283, 0.5950315)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=404441982]
+limit_enabled = false
+
+[node name="Bed" type="Area2D" parent="." unique_id=2099527611]
+script = ExtResource("4_gf3we")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bed" unique_id=858844186]
+polygon = PackedVector2Array(247, 409, -11, 487, -9, 596, 77, 596, 76, 553, 125, 552, 125, 594, 206, 594, 206, 648, 828, 648, 828, 604, 709, 495, 549, 501, 508, 457, 450, 505, 246, 502)
+
+[node name="Outside" type="Area2D" parent="." unique_id=248082623]
+script = ExtResource("5_6m4pu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Outside" unique_id=2034161512]
+polygon = PackedVector2Array(485, 339, 485, 469, 498, 455, 513, 456, 532, 475, 695, 475, 694, 341)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Outside" unique_id=371810625]
+position = Vector2(590.125, 249.5)
+shape = SubResource("RectangleShape2D_qyaky")
+
+[node name="Desk" type="Area2D" parent="." unique_id=1475947603]
+script = ExtResource("5_vowwe")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Desk" unique_id=597849436]
+polygon = PackedVector2Array(913, 537, 1039, 647, 1148, 649, 1151, 297, 1050, 297, 1050, 487, 1123, 518)
+
+[connection signal="mouse_entered" from="Bed" to="Bed" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Bed" to="Bed" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Outside" to="Outside" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Outside" to="Outside" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Desk" to="Desk" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Desk" to="Desk" method="_on_mouse_exited"]
