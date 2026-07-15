@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dru70r8wn5ovh"]
+
+[ext_resource type="Script" uid="uid://yutapngdwlkw" path="res://player.gd" id="1_5ncpa"]
+[ext_resource type="Texture2D" uid="uid://blidu3h4dbij4" path="res://Sprites/redCircle0000.png" id="1_dtqjt"]
+[ext_resource type="Texture2D" uid="uid://b7nkl80cnsumc" path="res://Sprites/redCircle0001.png" id="2_5ncpa"]
+[ext_resource type="Texture2D" uid="uid://kr7kk43nvxd4" path="res://Sprites/redCircle0002.png" id="3_wi0c6"]
+[ext_resource type="Texture2D" uid="uid://dplx017h2jqpd" path="res://Sprites/redCircle0003.png" id="4_hp6x6"]
+[ext_resource type="Texture2D" uid="uid://d3dtxd86yhjx7" path="res://Sprites/redCircle0004.png" id="5_3tkgg"]
+[ext_resource type="Texture2D" uid="uid://cpjxuxftt4uam" path="res://Sprites/redCircle0005.png" id="6_l6ohk"]
+[ext_resource type="Texture2D" uid="uid://b4wrc7aqpmdvb" path="res://Sprites/redCircle0006.png" id="7_oudfo"]
+[ext_resource type="Texture2D" uid="uid://h8ont160wg1g" path="res://Sprites/redCircle0007.png" id="9_wi0c6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6rpx"]
+size = Vector2(35, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3kul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dtqjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5ncpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wi0c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hp6x6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3tkgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l6ohk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oudfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wi0c6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2091237456]
+script = ExtResource("1_5ncpa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=273786933]
+position = Vector2(-3.5, 0.5)
+scale = Vector2(6.4432273, 6.4432273)
+shape = SubResource("RectangleShape2D_d6rpx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=971059885]
+z_index = 1
+texture_filter = 1
+scale = Vector2(6.4432273, 6.4432273)
+sprite_frames = SubResource("SpriteFrames_r3kul")
+frame_progress = 0.5105987

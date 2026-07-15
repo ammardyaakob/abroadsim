@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://merxpewoeju0"]
+
+[ext_resource type="PackedScene" uid="uid://dru70r8wn5ovh" path="res://Player.tscn" id="1_7sn5g"]
+[ext_resource type="Texture2D" uid="uid://vhbbltumjq87" path="res://Krita/Bedroom1.png" id="2_gf3we"]
+[ext_resource type="Texture2D" uid="uid://c6wygrg21qld3" path="res://kendall-smith-skyline.jpg" id="3_dewo4"]
+
+[node name="Node2D" type="Node2D" unique_id=463023459]
+
+[node name="Room" type="Parallax2D" parent="." unique_id=1555953302]
+
+[node name="TextureRect" type="TextureRect" parent="Room" unique_id=26932549]
+texture_filter = 1
+offset_left = -504.0
+offset_top = -256.0
+offset_right = 1760.0
+offset_bottom = 912.0
+texture = ExtResource("2_gf3we")
+
+[node name="CharacterBody2D" parent="." unique_id=2091237456 instance=ExtResource("1_7sn5g")]
+visible = false
+z_index = 2
+position = Vector2(39.99994, 416.00003)
+scale = Vector2(0.60198283, 0.5950315)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=404441982]
+zoom = Vector2(0.585, 0.585)
+limit_enabled = false
+
+[node name="outside" type="Parallax2D" parent="." unique_id=458676280]
+scale = Vector2(1.0217749, 0.94794)
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="TextureRect" type="TextureRect" parent="outside" unique_id=1135864540]
+z_index = -1
+offset_left = -70.46564
+offset_top = -143.469
+offset_right = 1537.0828
+offset_bottom = 861.43085
+scale = Vector2(0.90103656, 0.948997)
+texture = ExtResource("3_dewo4")
