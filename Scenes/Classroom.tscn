@@ -148,7 +148,9 @@ z_index = 1
 texture_filter = 1
 scale = Vector2(1.27, 1.27)
 sprite_frames = SubResource("SpriteFrames_mti6b")
-frame_progress = 0.07659533
+autoplay = "default"
+frame = 29
+frame_progress = 0.3556709
 centered = false
 
 [node name="CharacterBody2D" parent="." unique_id=2091237456 instance=ExtResource("33_fy5g4")]
