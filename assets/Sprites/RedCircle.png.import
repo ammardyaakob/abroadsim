@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6wygrg21qld3"
-path="res://.godot/imported/kendall-smith-skyline.jpg-7936c3f99dfed8a9c997588e309b8e45.ctex"
+uid="uid://cqxyk22w75bpm"
+path="res://.godot/imported/RedCircle.png-98ecf027fcb5a82e9fa2809a0434033c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kendall-smith-skyline.jpg"
-dest_files=["res://.godot/imported/kendall-smith-skyline.jpg-7936c3f99dfed8a9c997588e309b8e45.ctex"]
+source_file="res://assets/Sprites/RedCircle.png"
+dest_files=["res://.godot/imported/RedCircle.png-98ecf027fcb5a82e9fa2809a0434033c.ctex"]
 
 [params]
 

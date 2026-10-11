@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b22y6lrv82dsl" path="res://Scenes/room_1.gd" id="1_4uh16"]
 [ext_resource type="Texture2D" uid="uid://vhbbltumjq87" path="res://Krita/Bedroom1.png" id="1_fo1vw"]
-[ext_resource type="Texture2D" uid="uid://c6wygrg21qld3" path="res://kendall-smith-skyline.jpg" id="2_j3utp"]
+[ext_resource type="Texture2D" uid="uid://c6wygrg21qld3" path="res://assets/kendall-smith-skyline.jpg" id="2_j3utp"]
 [ext_resource type="PackedScene" uid="uid://dunxp1g14hes0" path="res://Scenes/gameplay_dashboard.tscn" id="2_ucp0a"]
-[ext_resource type="PackedScene" uid="uid://dru70r8wn5ovh" path="res://Player.tscn" id="3_kdje2"]
+[ext_resource type="PackedScene" uid="uid://dru70r8wn5ovh" path="res://Scenes/Player.tscn" id="3_kdje2"]
 [ext_resource type="Script" uid="uid://cxa3iclfryei4" path="res://scripts/bed.gd" id="4_4uh16"]
 [ext_resource type="Script" uid="uid://bqo3iinxfyxs6" path="res://scripts/Outside.gd" id="5_ucp0a"]
 [ext_resource type="Script" uid="uid://dot4xlfqtw3ub" path="res://scripts/desk.gd" id="6_3pgjm"]

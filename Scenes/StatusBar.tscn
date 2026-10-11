@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqnhikwahpl5w"]
 
-[ext_resource type="Theme" uid="uid://dpkny7jwtcwcx" path="res://myTheme.tres" id="1_hngqm"]
+[ext_resource type="Theme" uid="uid://dpkny7jwtcwcx" path="res://assets/myTheme.tres" id="1_hngqm"]
 [ext_resource type="FontFile" uid="uid://vioroflohxtk" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="2_p7608"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_afryw"]

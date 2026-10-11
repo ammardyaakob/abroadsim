@@ -32,8 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://c70ehaoyv2f51" path="res://assets/Sprites/classroom/frame_0029.png" id="30_qhxxt"]
 [ext_resource type="Texture2D" uid="uid://djke46tv6xjcu" path="res://assets/Sprites/classroom/frame_0030.png" id="31_51a2w"]
 [ext_resource type="Texture2D" uid="uid://1coiqeq4rwy4" path="res://assets/Sprites/classroom/frame_0031.png" id="32_smcv5"]
-[ext_resource type="PackedScene" uid="uid://dru70r8wn5ovh" path="res://Player.tscn" id="33_fy5g4"]
-[ext_resource type="Script" uid="uid://b2x3r7wf2o51m" path="res://Whiteboard.gd" id="34_jsehv"]
+[ext_resource type="PackedScene" uid="uid://dru70r8wn5ovh" path="res://Scenes/Player.tscn" id="33_fy5g4"]
+[ext_resource type="Script" uid="uid://b2x3r7wf2o51m" path="res://scripts/Whiteboard.gd" id="34_jsehv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mti6b"]
 animations = [{
