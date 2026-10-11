@@ -1,0 +1,26 @@
+~ start
+You've worked so hard. You, gifted you. Full of talents, and people that love you.
+And yet you contemplate if you ever deserved it.
+
+Tell me a little about yourself.
+
+~ life_values
+- I'm pretty good at math.
+	I see. So you'd say you're the gifted kid?
+- Nothing matters more than the people in my life.
+	I see. You've found the people in your life, Your support. Is that correct?
+- The little things in life make it worth living.
+	I see. So you understand that life's not all about racing to the finish line?
+
+~ confirm_values
+- Yes.
+- I wouldn't say so.
+	Hm. That's okay. Sometimes we are different from what we believe.
+	Then what would you say about your life? => life_values
+
+Thank you. I understand a little more about you, I think...
+I thinkkkk. I thingggg. I inngggg.
+- ?
+ringgg. RRRRRRINGGGGG. RRRRRRINGGGGG
+
+=> END

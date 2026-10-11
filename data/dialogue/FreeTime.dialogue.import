@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bt2besp43b6er"
+path="res://.godot/imported/FreeTime.dialogue-5630d4a09296d3f3ff4b33499894bd2e.tres"
+
+[deps]
+
+source_file="res://data/dialogue/FreeTime.dialogue"
+dest_files=["res://.godot/imported/FreeTime.dialogue-5630d4a09296d3f3ff4b33499894bd2e.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dunxp1g14hes0"]
+
+[ext_resource type="Script" uid="uid://dgt2pa0tnlgav" path="res://Scenes/gameplay_dashboard.gd" id="1_425mq"]
+[ext_resource type="PackedScene" uid="uid://dqnhikwahpl5w" path="res://Scenes/StatusBar.tscn" id="1_k7gl4"]
+
+[node name="GameplayDashboard" type="Node2D" unique_id=1083590484]
+z_index = 1
+script = ExtResource("1_425mq")
+
+[node name="Score" type="VBoxContainer" parent="." unique_id=334701101]
+offset_left = 792.0
+offset_top = 26.0
+offset_right = 1120.0
+offset_bottom = 124.0
+
+[node name="Happiness" parent="Score" unique_id=314827840 instance=ExtResource("1_k7gl4")]
+layout_mode = 2
+
+[node name="Property" parent="Score/Happiness/HBoxContainer" parent_id_path=PackedInt32Array(314827840, 1360876678) index="0" unique_id=2092087660]
+text = "Happiness"
+
+[node name="Social" parent="Score" unique_id=877713826 instance=ExtResource("1_k7gl4")]
+layout_mode = 2
+
+[node name="Property" parent="Score/Social/HBoxContainer" parent_id_path=PackedInt32Array(877713826, 1360876678) index="0" unique_id=2092087660]
+text = "Social"
+
+[node name="Study" parent="Score" unique_id=871944306 instance=ExtResource("1_k7gl4")]
+layout_mode = 2
+
+[node name="Property" parent="Score/Study/HBoxContainer" parent_id_path=PackedInt32Array(871944306, 1360876678) index="0" unique_id=2092087660]
+text = "Study"
+
+[node name="Moods" type="VBoxContainer" parent="." unique_id=496287623]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 280.0
+offset_bottom = 122.0
+
+[node name="Hunger" parent="Moods" unique_id=1463485805 instance=ExtResource("1_k7gl4")]
+layout_mode = 2
+
+[node name="Hygiene" parent="Moods" unique_id=1034675913 instance=ExtResource("1_k7gl4")]
+layout_mode = 2
+
+[node name="Property" parent="Moods/Hygiene/HBoxContainer" parent_id_path=PackedInt32Array(1034675913, 1360876678) index="0" unique_id=2092087660]
+text = "Hygiene"
+
+[node name="Rest" parent="Moods" unique_id=47686808 instance=ExtResource("1_k7gl4")]
+layout_mode = 2
+
+[node name="Property" parent="Moods/Rest/HBoxContainer" parent_id_path=PackedInt32Array(47686808, 1360876678) index="0" unique_id=2092087660]
+text = "Rest"
+
+[node name="TimeOfDay" parent="." unique_id=2121893030 instance=ExtResource("1_k7gl4")]
+offset_left = 448.0
+offset_top = 24.0
+offset_right = 640.0
+offset_bottom = 54.0
+
+[node name="Property" parent="TimeOfDay/HBoxContainer" parent_id_path=PackedInt32Array(2121893030, 1360876678) index="0" unique_id=2092087660]
+visible = false
+text = ""
+
+[node name="Colon" parent="TimeOfDay/HBoxContainer" parent_id_path=PackedInt32Array(2121893030, 1360876678) index="1" unique_id=2003762693]
+visible = false
+text = ""
+
+[editable path="Score/Happiness"]
+[editable path="Score/Social"]
+[editable path="Score/Study"]
+[editable path="Moods/Hunger"]
+[editable path="Moods/Hygiene"]
+[editable path="Moods/Rest"]
+[editable path="TimeOfDay"]

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dqnhikwahpl5w"]
+
+[ext_resource type="Theme" uid="uid://dpkny7jwtcwcx" path="res://myTheme.tres" id="1_hngqm"]
+[ext_resource type="FontFile" uid="uid://vioroflohxtk" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="2_p7608"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_afryw"]
+font = ExtResource("2_p7608")
+font_size = 20
+outline_size = 5
+outline_color = Color(0.012617188, 0.012617188, 0.012617188, 0.69411767)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.7176471)
+
+[node name="StatusBar" type="ColorRect" unique_id=314827840]
+custom_minimum_size = Vector2(100, 30)
+offset_right = 240.0
+offset_bottom = 30.0
+color = Color(1, 1, 1, 0.32941177)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1360876678]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Property" type="Label" parent="HBoxContainer" unique_id=2092087660]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("1_hngqm")
+text = "Hunger"
+label_settings = SubResource("LabelSettings_afryw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Colon" type="Label" parent="HBoxContainer" unique_id=2003762693]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("1_hngqm")
+text = ":"
+label_settings = SubResource("LabelSettings_afryw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="HBoxContainer" unique_id=1148078784]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("1_hngqm")
+text = "19"
+label_settings = SubResource("LabelSettings_afryw")
+horizontal_alignment = 1
+vertical_alignment = 1

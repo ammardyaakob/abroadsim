@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dn5wch6psp2o8"]
+
+[ext_resource type="Script" uid="uid://cg2yeoqor6dbq" path="res://scripts/game_start.gd" id="1_8g2f7"]
+[ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="2_0vix4"]
+[ext_resource type="Resource" uid="uid://mheukpxwpi0c" path="res://data/dialogue/GameStart.dialogue" id="3_0vix4"]
+
+[node name="GameStart" type="Node2D" unique_id=940012522]
+script = ExtResource("1_8g2f7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=471205607]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.8848981, 0.8639358, 0.84297353, 1)
+
+[node name="DialogueActionable2D" type="Area2D" parent="." unique_id=1069193540]
+script = ExtResource("2_0vix4")
+dialogue_resource = ExtResource("3_0vix4")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[connection signal="dialogue_ended" from="DialogueActionable2D" to="." method="_on_gamestart_dialogue_ended"]
