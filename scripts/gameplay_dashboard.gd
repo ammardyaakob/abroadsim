@@ -3,10 +3,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# General update to GUI
 	GameManager.stats_changed.connect(_on_stats_changed)
 	GameManager.time_changed.connect(_on_time_changed)
 	GameManager.stats_changed.emit()
 	GameManager.time_changed.emit()
+	
 	pass # Replace with function body.
 
 
@@ -16,9 +18,9 @@ func _process(delta: float) -> void:
 
 func _on_stats_changed(): # update stats GUI
 	
-	$Moods/Hunger/HBoxContainer/Value.text = str(GameManager.hunger)
-	$Moods/Rest/HBoxContainer/Value.text = str(GameManager.rest)
-	$Moods/Hygiene/HBoxContainer/Value.text = str(GameManager.hygiene)
+	$Moods/Hunger/HBoxContainer/Value.text = str(int(GameManager.hunger))
+	$Moods/Rest/HBoxContainer/Value.text = str(int(GameManager.rest))
+	$Moods/Hygiene/HBoxContainer/Value.text = str(int(GameManager.hygiene))
 	
 	$Score/Happiness/HBoxContainer/Value.text = str(GameManager.happiness)
 	$Score/Social/HBoxContainer/Value.text = str(GameManager.social_score)
@@ -26,5 +28,10 @@ func _on_stats_changed(): # update stats GUI
 
 func _on_time_changed():
 	$TimeOfDay/HBoxContainer/Value.text = str(GameManager.time_labels[GameManager.current_time])
-	
-	
+
+func _on_dialogue_actionable_2d_dialogue_ended() -> void:
+	$DialogueActionable2D.action()
+
+
+func _on_game_start_start_game() -> void:
+	self.visible = true;

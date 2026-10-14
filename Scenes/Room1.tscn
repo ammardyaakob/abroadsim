@@ -1,23 +1,18 @@
 [gd_scene format=3 uid="uid://merxpewoeju0"]
 
-[ext_resource type="Script" uid="uid://b22y6lrv82dsl" path="res://Scenes/room_1.gd" id="1_4uh16"]
+[ext_resource type="Script" uid="uid://b22y6lrv82dsl" path="res://scripts/room_1.gd" id="1_4uh16"]
 [ext_resource type="Texture2D" uid="uid://vhbbltumjq87" path="res://Krita/Bedroom1.png" id="1_fo1vw"]
 [ext_resource type="Texture2D" uid="uid://c6wygrg21qld3" path="res://assets/kendall-smith-skyline.jpg" id="2_j3utp"]
-[ext_resource type="PackedScene" uid="uid://dunxp1g14hes0" path="res://Scenes/gameplay_dashboard.tscn" id="2_ucp0a"]
 [ext_resource type="PackedScene" uid="uid://dru70r8wn5ovh" path="res://Scenes/Player.tscn" id="3_kdje2"]
 [ext_resource type="Script" uid="uid://cxa3iclfryei4" path="res://scripts/bed.gd" id="4_4uh16"]
 [ext_resource type="Script" uid="uid://bqo3iinxfyxs6" path="res://scripts/Outside.gd" id="5_ucp0a"]
 [ext_resource type="Script" uid="uid://dot4xlfqtw3ub" path="res://scripts/desk.gd" id="6_3pgjm"]
-[ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="7_kdje2"]
-[ext_resource type="Resource" uid="uid://bt2besp43b6er" path="res://data/dialogue/FreeTime.dialogue" id="9_ucp0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyaky"]
 size = Vector2(207.75, 109)
 
-[node name="Node2D" type="Node2D" unique_id=463023459]
+[node name="Bedroom" type="Node2D" unique_id=463023459]
 script = ExtResource("1_4uh16")
-
-[node name="GameplayDashboard" parent="." unique_id=1083590484 instance=ExtResource("2_ucp0a")]
 
 [node name="Room" type="Parallax2D" parent="." unique_id=1555953302]
 
@@ -74,12 +69,6 @@ script = ExtResource("6_3pgjm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Desk" unique_id=597849436]
 polygon = PackedVector2Array(913, 537, 1039, 647, 1148, 649, 1151, 297, 1050, 297, 1050, 487, 1123, 518)
-
-[node name="FreeTimeDialogue" type="Area2D" parent="." unique_id=1067726830]
-script = ExtResource("7_kdje2")
-dialogue_resource = ExtResource("9_ucp0a")
-dialogue_cue = "set_time"
-metadata/_custom_type_script = "uid://cqcur1rm7433g"
 
 [connection signal="mouse_entered" from="Bed" to="Bed" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Bed" to="Bed" method="_on_mouse_exited"]

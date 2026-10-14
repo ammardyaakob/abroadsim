@@ -81,3 +81,7 @@ func _on_dialogue_ended(ending_dialogue_resource: DialogueResource) -> void:
 
 
 #endregion
+
+
+func _on_game_start_start_game() -> void:
+	action()

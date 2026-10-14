@@ -5,10 +5,13 @@ extends Node2D
 func _ready() -> void:
 	$DialogueActionable2D.action()
 
+signal start_game
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _on_gamestart_dialogue_ended() -> void:
-	GameManager.change_scene("res://Scenes/Room1.tscn")
+	start_game.emit()
+	# start Game
+	

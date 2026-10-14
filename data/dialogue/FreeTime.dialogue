@@ -1,7 +1,6 @@
 
 
 ~ start
-
 if GameManager.current_time == GameManager.TimeOfDay.EARLY_MORNING
 	You've got some free time. What would you like to do?
 	- Study 
@@ -9,42 +8,42 @@ if GameManager.current_time == GameManager.TimeOfDay.EARLY_MORNING
 		You study what you can. Maybe you understood. Maybe you don't.
 	- Sleep in
 		You tuck yourself back in on this cold morning.
-		$> GameManager.rest += 15
+		$> GameManager.rest += 25
 
-if GameManager.current_time == GameManager.TimeOfDay.MORNING
+elif GameManager.current_time == GameManager.TimeOfDay.MORNING
 	You've got some free time. What would you like to do?
 	- Shower
-		$> GameManager.hygiene += 75
+		$> GameManager.hygiene += 85
 		You take a nice shower.
 	- Eat
-		$> GameManager.hunger += 20
+		$> GameManager.hunger += 40
 		You have a nice, hearty breakfast.
 	- Go Out
 		No one's up this early. You go out alone.
-		$> GameManager.happiness += 20
+		$> GameManager.happiness += 1
 	- Study 
 		$> GameManager.study_score += 1
 		You feel like you learned more than if you had gone to lecture.
 	- Sleep in
 		You sleep even more tightly knowing your friends are going to lecture.
-		$> GameManager.rest += 20
+		$> GameManager.rest += 30
 	
-if GameManager.current_time == GameManager.TimeOfDay.LUNCH
+elif GameManager.current_time == GameManager.TimeOfDay.LUNCH
 	You've got some free time. What would you like to do?
 	- Shower
-		$> GameManager.hygiene += 75
+		$> GameManager.hygiene += 85
 		You take a nice shower.
 	- Study 
 		$> GameManager.study_score += 3
 		You feel like you learned more than if you had gone to lecture.
 	- Sleep in
 		You go home and have a nap.
-		$> GameManager.rest += 15
+		$> GameManager.rest += 25
 
-if GameManager.current_time == GameManager.TimeOfDay.AFTERNOON
+elif GameManager.current_time == GameManager.TimeOfDay.AFTERNOON
 	You've got some free time. What would you like to do?
 	- Shower
-		$> GameManager.hygiene += 75
+		$> GameManager.hygiene += 85
 		You take a nice shower.
 	- Study 
 		$> GameManager.study_score += 2
@@ -54,17 +53,17 @@ if GameManager.current_time == GameManager.TimeOfDay.AFTERNOON
 		$> GameManager.happiness += 1
 		$> GameManager.social_score += 3
 	- Eat
-		$> GameManager.hunger += 20
+		$> GameManager.hunger += 30
 		You have lunch.
 	- Sleep
-		You sleep in on such a fine day and wake up feeling slightly worse.
-		$> GameManager.rest -= 15
+		You sleep in on such a fine day and wake up feeling even worse.
+		$> GameManager.rest -= 5
 	
 
-if GameManager.current_time == GameManager.TimeOfDay.EVENING
+elif GameManager.current_time == GameManager.TimeOfDay.EVENING
 	You've got some free time. What would you like to do?
 	- Shower
-		$> GameManager.hygiene += 75
+		$> GameManager.hygiene += 85
 		You take a nice shower.
 	- Study 
 		$> GameManager.study_score += 2
@@ -74,15 +73,14 @@ if GameManager.current_time == GameManager.TimeOfDay.EVENING
 		$> GameManager.happiness += 1
 		$> GameManager.social_score += 3
 	- Sleep
+		$> GameManager.rest += 30
+		$> GameManager.advance_time_slot()
 		You lie in bed, and wake back up in the middle of the night. Maybe that wasn't such a good idea. 
-		$> GameManager.rest += 10
-		$> GameManager.current_time = GameManager.TimeOfDay.NIGHT
 	- Eat
-		$> GameManager.hunger += 20
+		$> GameManager.hunger += 40
 		You have an early dinner.
 
-
-if GameManager.current_time == GameManager.TimeOfDay.NIGHT
+elif GameManager.current_time == GameManager.TimeOfDay.NIGHT
 	You've got some free time. What would you like to do?
 	- Shower
 		$> GameManager.hygiene += 75
@@ -95,11 +93,10 @@ if GameManager.current_time == GameManager.TimeOfDay.NIGHT
 		$> GameManager.happiness += 1
 		$> GameManager.social_score += 3
 	- Eat
-		$> GameManager.hunger += 20
+		$> GameManager.hunger += 40
 		You eat dinner.
 
-
-if GameManager.current_time == GameManager.TimeOfDay.LATE_NIGHT
+elif GameManager.current_time == GameManager.TimeOfDay.LATE_NIGHT
 	You've got some free time. What would you like to do?
 	- Study 
 		$> GameManager.study_score += 1
@@ -108,6 +105,7 @@ if GameManager.current_time == GameManager.TimeOfDay.LATE_NIGHT
 		You pull up the late owl squad, and get up to some shenanigans.
 		$> GameManager.happiness += 3
 		$> GameManager.social_score += 3
+
 
 $> GameManager.advance_time_slot()
 => END

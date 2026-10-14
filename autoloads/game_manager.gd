@@ -28,17 +28,17 @@ var happiness: int = 0:
 		happiness = clamp(value, 0, 100)
 		stats_changed.emit()
 
-var hunger: int = 50:
+var hunger: float = 80:
 	set(value):
 		hunger = clamp(value, 0, 100)
 		stats_changed.emit()
 
-var rest: int = 50:
+var rest: float = 80:
 	set(value):
 		rest = clamp(value, 0, 100)
 		stats_changed.emit()
 
-var hygiene: int = 50:
+var hygiene: float = 80:
 	set(value):
 		hygiene = clamp(value, 0, 100)
 		stats_changed.emit()
@@ -70,10 +70,14 @@ func update_stat(stat_name: String, amount: float) -> void:
 	stats_changed.emit()
 	
 func advance_time_slot() -> void:
+	hygiene -= 10
+	hunger -= 10
+	rest -= 10
+	
 	if skips_count >= max_skips_allowed:
 		#trigger_deportation_ending()
 		return
-
+	
 	# Increment time slot
 	if current_time == TimeOfDay.LATE_NIGHT:
 		current_time = TimeOfDay.EARLY_MORNING
@@ -81,13 +85,15 @@ func advance_time_slot() -> void:
 		update_daily_happiness() # Recalculate Hunger/Hygiene losses each new day
 	else:
 		current_time = (current_time + 1) as TimeOfDay
-
+	
+	time_changed.emit() # Update first
 	stats_changed.emit()
 
 func update_daily_happiness() -> void:
 	# Happiness recalculation based on your rules
-	var daily_wellbeing = (rest + hunger + hygiene) / 3.0 # Happiness formula
-	happiness = int(daily_wellbeing * (1.0 + (friend_count * 0.05))) # friendship boost
+	var daily_wellbeing = (rest + hunger + hygiene) / 3 / 100 * 4 # Happiness formula. 
+	# 75% average, 3 points.
+	happiness += int(daily_wellbeing * (1.0 + (friend_count * 0.05))) # friendship boost
 
 func change_scene(pathToScene) -> void:
 	get_tree().change_scene_to_file(pathToScene)
@@ -95,3 +101,4 @@ func change_scene(pathToScene) -> void:
 func set_time_slot(timeOfDay) -> void:
 	current_time = timeOfDay
 	time_changed.emit()
+	

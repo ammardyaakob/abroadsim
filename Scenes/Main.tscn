@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://tllllny36hnn"]
+
+[ext_resource type="PackedScene" uid="uid://dn5wch6psp2o8" path="res://Scenes/GameStart.tscn" id="1_pbw6q"]
+[ext_resource type="Script" uid="uid://ccq2htmklgsib" path="res://Scenes/main.gd" id="1_v1gob"]
+[ext_resource type="PackedScene" uid="uid://dunxp1g14hes0" path="res://Scenes/gameplay_dashboard.tscn" id="2_pbw6q"]
+[ext_resource type="Script" uid="uid://cqcur1rm7433g" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd" id="3_v1gob"]
+[ext_resource type="Resource" uid="uid://bt2besp43b6er" path="res://data/dialogue/FreeTime.dialogue" id="4_jw32o"]
+
+[node name="Main" type="Node2D" unique_id=1336180675]
+script = ExtResource("1_v1gob")
+
+[node name="World" type="Node" parent="." unique_id=1226372826]
+
+[node name="GameStart" parent="World" unique_id=940012522 instance=ExtResource("1_pbw6q")]
+
+[node name="UI" type="Node" parent="." unique_id=444842246]
+
+[node name="GameplayDashboard" parent="UI" unique_id=1083590484 instance=ExtResource("2_pbw6q")]
+visible = false
+
+[node name="FreeTimeDialogue" type="Area2D" parent="UI" unique_id=97336992]
+script = ExtResource("3_v1gob")
+dialogue_resource = ExtResource("4_jw32o")
+dialogue_cue = "set_time"
+metadata/_custom_type_script = "uid://cqcur1rm7433g"
+
+[connection signal="start_game" from="World/GameStart" to="." method="_on_game_start_start_game"]
+[connection signal="start_game" from="World/GameStart" to="UI/GameplayDashboard" method="_on_game_start_start_game"]
+[connection signal="start_game" from="World/GameStart" to="UI/FreeTimeDialogue" method="_on_game_start_start_game"]
