@@ -1,0 +1,139 @@
+~ start
+
+# ==========================================
+# EARLY MORNING
+# ==========================================
+if GameManager.current_time == GameManager.TimeOfDay.EARLY_MORNING
+	It's early in the morning. Get ready for the day?
+	- Shower and breakfast
+		You have a nice shower and a little snack for breakfast.
+		$> GameManager.advance_time_slot()
+		$> GameManager.dialogue_main_start.emit()
+		=> END
+	- Skip (Free Time)
+		$> GameManager.dialogue_free_time_start.emit()
+		=> END
+
+# ==========================================
+# MORNING
+# ==========================================
+elif GameManager.current_time == GameManager.TimeOfDay.MORNING
+	Morning has arrived. What would you like to do?
+	- Go to lecture
+		You head to class and attend the morning lecture.
+		$> GameManager.advance_time_slot()
+		$> GameManager.dialogue_main_start.emit()
+		=> END
+	- Skip lecture (Free Time)
+		You decide to skip class this morning.
+		$> GameManager.dialogue_free_time_start.emit()
+		=> END
+
+# ==========================================
+# LUNCH
+# ==========================================
+elif GameManager.current_time == GameManager.TimeOfDay.LUNCH
+	It's lunchtime. How will you refuel?
+	- Eat out
+		You head out to grab a meal at a nearby cafe.
+		$> GameManager.advance_time_slot()
+		$> GameManager.dialogue_main_start.emit()
+		=> END
+	#- Eat cooked meal at home [if GameManager.has_cooked_food]
+	#	You eat the meal you cooked earlier in the fridge.
+	#	set GameManager.has_cooked_food = false
+	#	$> GameManager.advance_time_slot()
+	#	$> GameManager.dialogue_main_start.emit()
+	#	=> END
+	- Don't eat (Free Time)
+		You decide to skip lunch.
+		$> GameManager.dialogue_free_time_start.emit()
+		=> END
+
+# ==========================================
+# AFTERNOON
+# ==========================================
+elif GameManager.current_time == GameManager.TimeOfDay.AFTERNOON
+	It's time for afternoon lecture. 
+	- Go to lecture
+		You attend your afternoon class.
+		$> GameManager.advance_time_slot()
+		$> GameManager.dialogue_main_start.emit()
+		=> END
+	- Skip lecture (Free Time)
+		You decide to skip the afternoon lecture.
+		$> GameManager.dialogue_free_time_start.emit()
+		=> END
+
+# ==========================================
+# EVENING
+# ==========================================
+elif GameManager.current_time == GameManager.TimeOfDay.EVENING
+	The sun is setting. It's evening free time.
+	$> GameManager.dialogue_free_time_start.emit()
+	=> END
+
+# ==========================================
+# NIGHT
+# ==========================================
+elif GameManager.current_time == GameManager.TimeOfDay.NIGHT
+	Night has fallen. Time to unwind.
+	- Sleep
+		You crawl into bed for a normal night's sleep.
+		#set GameManager.slept_at_night_last_night = true
+		$> GameManager.advance_time_slot()
+		$> GameManager.dialogue_main_start.emit()
+		=> END
+	#- Long Sleep [if GameManager.slept_at_night_last_night]
+	#	Since you slept well yesterday, you take a deep, well-rested sleep.
+	#	set GameManager.slept_at_night_last_night = true
+	#	$> GameManager.advance_time_slot()
+	#	$> GameManager.dialogue_main_start.emit()
+	#	=> END
+	- Free Time
+		You decide to stay up for now.
+		$> GameManager.dialogue_free_time_start.emit()
+		=> END
+
+# ==========================================
+# LATE NIGHT
+# ==========================================
+elif GameManager.current_time == GameManager.TimeOfDay.LATE_NIGHT
+	It's extremely late. What do you want to do?
+	- Sleep
+		You finally call it a night and fall asleep.
+		set GameManager.slept_at_night_last_night = false
+		$> GameManager.advance_time_slot()
+		$> GameManager.dialogue_main_start.emit()
+		=> END
+	- Skip
+		You prepare yourself for an all-nighter.
+		$> GameManager.dialogue_free_time_start.emit()
+		=> END
+
+=> END
+
+~ DEBUG_set_time
+# Time Management Debug / Selection Menu
+Select the time of day you want to jump to:
+- Early Morning
+	$> GameManager.set_time_slot(GameManager.TimeOfDay.EARLY_MORNING)
+	=> start
+- Morning
+	$> GameManager.set_time_slot(GameManager.TimeOfDay.MORNING)
+	=> start
+- Lunch
+	$> GameManager.set_time_slot(GameManager.TimeOfDay.LUNCH)
+	=> start
+- Afternoon
+	$> GameManager.set_time_slot(GameManager.TimeOfDay.AFTERNOON)
+	=> start
+- Evening
+	$> GameManager.set_time_slot(GameManager.TimeOfDay.EVENING)
+	=> start
+- Night
+	$> GameManager.set_time_slot(GameManager.TimeOfDay.NIGHT)
+	=> start
+- Late Night
+	$> GameManager.set_time_slot(GameManager.TimeOfDay.LATE_NIGHT)
+	=> start

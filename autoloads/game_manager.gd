@@ -64,12 +64,17 @@ var is_deported: bool = false
 signal stats_changed
 signal time_changed
 
+# Dialogue Signal
+signal dialogue_free_time_start
+signal dialogue_main_start
+
 func update_stat(stat_name: String, amount: float) -> void:
 	# Adjust stats and clamp them between 0 and 100
 	set(stat_name, clamp(get(stat_name) + amount, 0, 100))
 	stats_changed.emit()
 	
 func advance_time_slot() -> void:
+	print("SKIP")
 	hygiene -= 10
 	hunger -= 10
 	rest -= 10

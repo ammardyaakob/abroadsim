@@ -28,10 +28,3 @@ func _on_stats_changed(): # update stats GUI
 
 func _on_time_changed():
 	$TimeOfDay/HBoxContainer/Value.text = str(GameManager.time_labels[GameManager.current_time])
-
-func _on_dialogue_actionable_2d_dialogue_ended() -> void:
-	$DialogueActionable2D.action()
-
-
-func _on_game_start_start_game() -> void:
-	self.visible = true;

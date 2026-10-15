@@ -106,11 +106,11 @@ elif GameManager.current_time == GameManager.TimeOfDay.LATE_NIGHT
 		$> GameManager.happiness += 3
 		$> GameManager.social_score += 3
 
-
 $> GameManager.advance_time_slot()
+$> GameManager.dialogue_main_start.emit()
 => END
 
-~ set_time
+~ DEBUG_set_time
 # Time Management Debug / Selection Menu
 Select the time of day you want to jump to:
 - Early Morning

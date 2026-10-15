@@ -1,0 +1,39 @@
+uni student sim
+
+ethos: balance study, social life and happiness
+=Big time skips=
+Go to lecture: increase study (depends on lecturer), social life according to *amount of friends*. Too much skip = deported
+Go out with friends: Increase social life, happiness gain depends on *friendship health*. money, time, hunger, rest spend/gain depends on event
+Happiness depends on daily rest, hunger, hygiene, and amount of friends.
+
+daily chores: balance rest, hunger, money and hygiene
+Rest : *sleep* on bed at *night*, or *late night* and have less rest
+Hunger : *Eat Outside* with money, or spend *time* to *cook*. Eat outside depending on place, can cause *food poisoning* which spends time. often food poisoning lessens chance.
+Money : Set amount
+Hygiene : spend *time* to *shower*
+
+
+replayability: have a summary of each student life journey and ending
+
+- use door to go to class vs go out
+	- if during working hours, not many people available.
+- end of term see if study is good
+- study determines if pass
+- happiness determines energy to apply for jobs
+- social + study determines salary
+
+freetime: sleep, go out, study, cook, shower
+
+TIMES: Early morning: shower/no shower, no shower freetime.
+
+Morning: go lecture or skip. skip: freetime.
+
+Lunch: eat out, eat at home if got cooked, or dont eat. If dont eat, freetime
+
+Afternoon : Go to lecture, or skip. skip: freetime.
+
+Evening: Freetime.
+
+Night: Sleep/Long Sleep or freetime. Long sleep only available if last night sleep at night
+
+Late night: study all nighter or sleep. if study, sleep immensely affected tomorrow.

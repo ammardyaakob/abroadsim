@@ -16,7 +16,6 @@ signal actioned()
 ## signal is also emitted if the same resource is used for multiple [DialogueActionable2D] nodes in the tree.
 signal dialogue_ended()
 
-
 ## The [DialogueResource] to use when starting dialogue.
 @export var dialogue_resource: DialogueResource = null:
 	set(value):
@@ -79,9 +78,4 @@ func _on_dialogue_ended(ending_dialogue_resource: DialogueResource) -> void:
 		dialogue_ended.emit()
 		GameManager.bg_input_blocked = false;
 
-
 #endregion
-
-
-func _on_game_start_start_game() -> void:
-	action()
